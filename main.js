@@ -34,6 +34,20 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function showResults(humanScore, computerScore) {
+    if (humanScore > computerScore) {
+        console.log("You win the game!");
+        console.log("You: " + humanScore);
+        console.log("Computer: " + computerScore);
+    } else if (computerScore > humanScore) {
+        console.log("You lose the game!");
+        console.log("You: " + humanScore);
+        console.log("Computer: " + computerScore);
+    } else {
+        console.log("The game is tied!");
+    }
+}
+
 function playGame() {
     for (let i = 0; i < 5; i++) {
         const humanChoice = getHumanChoice();
@@ -42,12 +56,7 @@ function playGame() {
         playRound(humanChoice, computerChoice);
     }
 
-    if (humanScore > computerScore)
-        console.log("You win the game!");
-    else if (computerScore > humanScore)
-        console.log("You lose the game!");
-    else
-        console.log("The game is tied!");
+    showResults(humanScore, computerScore);
 }
 
 let humanScore = 0;
